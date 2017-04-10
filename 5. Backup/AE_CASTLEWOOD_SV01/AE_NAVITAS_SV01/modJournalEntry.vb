@@ -67,12 +67,7 @@
                 oJournalEntry.Lines.LineMemo = oDsJournal.Tables(1).Rows(mjs).Item(4).ToString.Trim
                 ' (Dimension 1)
                 If Not String.IsNullOrEmpty(oDsJournal.Tables(1).Rows(mjs).Item(3).ToString.Trim) Then
-                    If CInt(oDsJournal.Tables(1).Rows(mjs).Item(3).ToString.Trim) <= 199 Then
-                        oJournalEntry.Lines.CostingCode = oDsJournal.Tables(1).Rows(mjs).Item(3).ToString.Trim
-                    ElseIf CInt(oDsJournal.Tables(1).Rows(mjs).Item(3).ToString.Trim) >= 200 Then
-                        oJournalEntry.Lines.CostingCode2 = oDsJournal.Tables(1).Rows(mjs).Item(3).ToString.Trim
-                    End If
-
+                    oJournalEntry.Lines.CostingCode = oDsJournal.Tables(1).Rows(mjs).Item(3).ToString.Trim
                 End If
                 oJournalEntry.Lines.Add()
             Next
